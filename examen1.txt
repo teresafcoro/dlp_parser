@@ -1,0 +1,10 @@
+def main(): {
+    a:int;
+    a=3;
+    if a==3 && !(a>4) || a<0:
+        print a==3, '\n'; # muestra true
+    while a<6: {
+        print a<4, ' '; # muestra true false false
+        a = a + 1;
+    }
+}

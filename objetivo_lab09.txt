@@ -1,0 +1,9 @@
+Definir una GA para realizar toda la comprobación de tipos del lenguaje Pmm.
+Implementar la pasada de comprobación de tipos de la fase de análisis semántico.
+Decorar el AST con la información de tipos.
+Detectar los errores de los 5 programas de prueba.
+
+Simple type o type pero verificar tipo simple en retorno funciones
+
+TypeCheckingVisitor: inferir el tipo (calcular) + comprobar tipos
+    Type <- - - Expression {get/setType}

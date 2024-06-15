@@ -1,0 +1,17 @@
+Implementar la fase de identificación de la fase de análisis semántico:
+    Completar la Tabla de Símbolos (SymbolTable.java), verificar su funcionamiento mediante SymbolTableTest.java.
+    Completar la fase de identificación mediante el patrón visitor.
+    Verificar que la implementación es correcta mediante input.txt y el introspector.
+    Finalmente, verificar que se detectan los 4 arrores del programa wrong.input.txt.
+
+Variable ---1-> Definition        <-1---name:String-- SymbolTable
+                getScope(): int
+                setScope(int)
+
+La tabla de símbolos no crea errores, eso el Visitor; insert retorna false, etc si no puede insertar, etc
+
+Actualizar uml
+
+package gramatica atribuida con txt por cada,
+    lvalue.txt
+    identification.txt

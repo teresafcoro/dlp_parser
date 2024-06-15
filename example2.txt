@@ -1,0 +1,10 @@
+d, a: struct {
+    b: struct {
+        e, c: int;
+    };
+};
+
+def main():{
+    a.b.c = 3;
+    print a.b.c;
+}

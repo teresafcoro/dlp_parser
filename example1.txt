@@ -1,0 +1,12 @@
+def f(n: int, r: double, real: double): int {
+  	c1, c2: char;
+	c1 = (char)n;
+  	real = (double)c1 + (double)n + r;
+  	p();
+  	return (int)c1;
+}
+
+def main(): {
+    f(2, 3.1, 'a');
+    print (a==b) && (7<9);
+}

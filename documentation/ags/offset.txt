@@ -1,0 +1,25 @@
+G:
+    (1): VariableDefinition: definition -> ID type
+    (2): FunctionDefinition: definition -> ID type variableDefinition* statement*
+    (3): FunctionType: type -> variableDefinition* type
+    (4): StructType: type -> field*
+    (5): Field: type -> ID type
+A:
+    { variableDefinition.offset, field.offset } Dominio entero (int)
+R:
+    (2): int offset = 0;
+         for (VariableDefinition vd : variableDefinition*) {
+            offset += vd.type.numberOfBytes();
+            vd.offset = -offset;
+         }
+    (3): int offset = 4;
+         for (int i = variableDefinition*.size(); i >= 0; i--) {
+             VariableDefinition v = variableDefinition*.get(i);
+             v.offset = offset;
+             offset += v.type.numberOfBytes();
+         }
+    (4): int offset = 0;
+         for (Field f : field*) {
+            f.offset = offset;
+            offset += f.type.numberOfBytes();
+         }

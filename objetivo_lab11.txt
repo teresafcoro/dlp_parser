@@ -1,0 +1,31 @@
+Generar el codigo MAPL para:
+- Programs
+- Input statements
+- Print statements
+- Literals
+- Variables
+- Assignments
+- Arithmetic, comparison and logical expressions
+- VarDefinitions (global / local)
+- FunDefinitions
+- Casts
+
+Settings:
+  ext tools + > Debug MAPL
+    $ProjectFileDir$\mapl\GVM.exe
+    output.txt
+    $ProjectFileDir$
+  ext tools + > Run MAPL
+    $ProjectFileDir$\mapl\TextVM.exe
+    output.txt
+    $ProjectFileDir$
+  Keymap - ext tools - shortcut - alt+d - alt+e
+
+Tareas:
+Especificar plantillas de generación de código
+    Excepto if, while, invocation, return, fieldAccess, indexing
+Implementar la generación de código con los visitors Execute, Value y AddressCGVisitor
+Modificar AST añadiendo suffix():char en Type
+Probar input.txt con el interprete de MAPL
+Modificar main.java fichero de salida output.txt
+Actualizar UML

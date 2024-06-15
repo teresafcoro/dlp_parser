@@ -1,0 +1,9 @@
+Generar codigo para:
+- Indexing
+- FieldAccess
+- While statements
+- If statements
+
+Tareas:
+Especificar resto de plantillas de generación de código + Implementarlas
+Probar input.1.txt con el interprete de MAPL

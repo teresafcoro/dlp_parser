@@ -1,0 +1,30 @@
+G:
+    (1): ArithmeticOperator:  expression1 -> expression2 (+ | - | * | / | %) expression3
+    (2): ArrayAccess: expression1 -> expression2 expression3
+    (3): Cast: expression1 -> type expression2
+    (4): CharLiteral: expression -> CHAR_CONSTANT
+    (5): ComparisonOperator: expression1 -> expression2 (> | < | >= | <= | == | !=) expression3
+    (6): FunctionCall: expression1 -> expression2 expression3*
+    (7): IntLiteral: expression -> INT_CONSTANT
+    (8): LogicalOperator: expression1 -> expression2 (&& | ||) expression3
+    (9): NotOperator: expression1 -> expression2
+    (10): RealLiteral: expression -> REAL_CONSTANT
+    (11): StructAccess: expression1 -> expression2 ID
+    (12): UnaryMinus: expression1 -> expression2
+    (13): Variable: expression -> ID
+A:
+    { expression.lvalue } Dominio booleano
+R:
+    (1): ArithmeticOperator: expression1.lvalue = false
+    (2): ArrayAccess: expression1.lvalue = true
+    (3): Cast: expression1.lvalue = false
+    (4): CharLiteral: expression.lvalue = false
+    (5): ComparisonOperator: expression1.lvalue = false
+    (6): FunctionCall: expression1.lvalue = false
+    (7): IntLiteral: expression.lvalue = false
+    (8): LogicalOperator: expression1.lvalue = false
+    (9): NotOperator: expression1.lvalue = false
+    (10): RealLiteral: expression.lvalue = false
+    (11): StructAccess: expression1.lvalue = true
+    (12): UnaryMinus: expression1.lvalue = false
+    (13): Variable: expression.lvalue = true

@@ -1,0 +1,15 @@
+Recorrer el AST mediante el patron de diseño Visitor, anotando el nuevo atributo LValue en todas las expressions.
+El compilador debe reconocer como válido el programa input.txt y mostrar los correspondientes errores en los programas input.wrong.1.txt y input.wrong.2.txt
+
+En la izquierda deben ir: variables, accesos a campos o a arrays
+input a; <- a (exp) debe ser un lvalue
+
+Interfaz visitor; añadir accept a ASTNode ; impl en las clases, no en abs
+impl TypeCheckingVisitor
+iExp get y setLValue
+
+En todos los visit:
+1) ¿Calcular?
+2) ¿Verificar?
+3) ¿Recorrer? <- Siempre    =) Clase abstracta
+    @Override solo los que 1) y 2)

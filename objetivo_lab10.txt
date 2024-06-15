@@ -1,0 +1,19 @@
+Annotate the AST with the offsets of:
+- Global variables
+- Local variables
+- (Formal) parameters
+- Record fields
+
+OFFSET: varglobal pos mem real vs varlocal calcular (n bytes arriba- o abajo+ de la pos de mem de bp)
+
+VarGlobales: Suma del tamaño de las v anteriores
+VarLocales: BP - suma del tamaño de las v anteriores (incluyendose a si misma)
+Params: BP + 4 + suma argumentos a su dcha en la declaracion (sin incluirse a si mismo)
+Campos: suma tam campos anteriores
+
+Tareas:
+- Definir AG para calcular el offset de vardef y fieldrecord (struct).
+- Añadir getOffset():int y set en VarDef y RecordField.
+- Añadir numberOfBytes():int en Type.
+- Impl OffSetVisitor en codegenerator (pckg).
+- Probar input.txt.

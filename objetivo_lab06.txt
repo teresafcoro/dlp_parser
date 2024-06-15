@@ -1,0 +1,23 @@
+ErrorType - - - |> Type
+- message:String
++ErrorType(int,int,string)
++ToString():String
+
+<<Singleton>>
+ErrorHandler                    --errors--*->    ErrorType
++AnyError():boolean
++AddError(ErrorType):void
++ShowErrors(PrintStream):void
+
+
+ErrorType errorType = new ErrorType(4,14,"...");
+
+ErrorHandler.GetInstance().AddError(this); // en el constructor de ErrorType
+
+
+VariableDefinition comprobar si la variable ya se creó; lo mismo con structFields
+.contains()
+sobreescribir el equals y hashcode (por nombre)
+
+
+Pasar wrong.input. 1 y 2.

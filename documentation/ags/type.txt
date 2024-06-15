@@ -1,0 +1,44 @@
+G:
+    (1): ArithmeticOperator:  expression1 -> expression2 (+ | - | * | / | %) expression3
+    (2): ArrayAccess: expression1 -> expression2 expression3
+    (3): Cast: expression1 -> type expression2
+    (4): CharLiteral: expression -> CHAR_CONSTANT
+    (5): ComparisonOperator: expression1 -> expression2 (> | < | >= | <= | == | !=) expression3
+    (6): FunctionCall: expression1 -> expression2 expression3*
+    (7): IntLiteral: expression -> INT_CONSTANT
+    (8): LogicalOperator: expression1 -> expression2 (&& | ||) expression3
+    (9): NotOperator: expression1 -> expression2
+    (10): RealLiteral: expression -> REAL_CONSTANT
+    (11): StructAccess: expression1 -> expression2 ID
+    (12): UnaryMinus: expression1 -> expression2
+    (13): Variable: expression -> ID
+    (14): Assignment: statement -> expression1 expression2
+    (15): IfElse: statement1 -> expression statement2* statement3*
+    (16): Input: statement -> expression
+    (17): Print: statement -> expression
+    (18): Return: statement -> expression
+    (19): While: statement1 -> expression statement2*
+    (20): FunctionDefinition: definition1 -> ID type definition2* statement*
+A:
+    { expression.type } Dominio Type
+R:
+    (1): expression1.type = expression2.type.arithmetic(expression3.type)
+    (2): expression1.type = expression2.type.squareBrackets(expression3.type)
+    (3): expression1.type = expression2.type.canBeCastTo(type)
+    (4): expression.type = CharType.getInstance()
+    (5): expression1.type = expression2.type.comparison(expression3.type)
+    (6): expression1.type = expression2.definition.type.parenthesis(expression3*.map(ex -> expression.type))
+    (7): expression.type = IntType.getInstance()
+    (8): expression1.type = expression2.type.logical(expression3.type)
+    (9): expression1.type = expression2.type.logical()
+    (10): expression.type = RealType.getInstance()
+    (11): expression1.type = expression2.type.dot(ID)
+    (12): expression1.type = expression2.type.arithmetic()
+    (13): expression.type = expression.definition.type
+    (14): expression1.type = expression2.type.promotesTo(expression1.type)
+    (15): expression.type.asLogical()
+    (16): expression.type.asBuiltInType() // .mustBeBuiltInType()
+    (17): expression.type.asBuiltInType()
+    (18): expression.type.promotesTo(statement.returnType)
+    (19): expression.type.asLogical()
+    (20): foreach(statement => statement.returnType = type.returnType)
